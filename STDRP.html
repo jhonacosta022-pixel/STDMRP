@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santo Domingo RP | Staff y Soporte</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --rojo:#ff1a1a;
+    --rojo-hover:#ff3d3d;
+    --negro:#090909;
+    --panel:#141414;
+    --panel2:#1d1d1d;
+    --texto:#e8e8e8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--negro);
+    color:var(--texto);
+}
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:280px;
+    height:100%;
+    background:#0d0d0d;
+    border-right:2px solid var(--rojo);
+    overflow-y:auto;
+}
+
+.logo{
+    text-align:center;
+    padding:30px 15px;
+    border-bottom:1px solid #222;
+}
+
+.logo h1{
+    color:var(--rojo);
+    font-size:34px;
+    font-weight:800;
+}
+
+.logo p{
+    color:#aaa;
+}
+
+.menu{
+    list-style:none;
+    padding:15px;
+}
+
+.menu li{
+    margin-bottom:10px;
+}
+
+.menu a{
+    display:block;
+    text-decoration:none;
+    color:white;
+    background:#171717;
+    padding:15px;
+    border-left:4px solid var(--rojo);
+    border-radius:8px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    background:#242424;
+    transform:translateX(5px);
+}
+
+.main{
+    margin-left:280px;
+}
+
+.hero{
+    padding:80px 40px;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
+    url('banner.jpg');
+    background-size:cover;
+    background-position:center;
+    border-bottom:3px solid var(--rojo);
+}
+
+.hero h1{
+    font-size:55px;
+    font-weight:800;
+}
+
+.hero span{
+    color:var(--rojo);
+}
+
+.hero p{
+    margin-top:15px;
+    color:#cfcfcf;
+}
+
+.section{
+    padding:20px 40px;
+}
+
+.card{
+    background:var(--panel);
+    border:1px solid #2b2b2b;
+    border-radius:15px;
+    padding:30px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:var(--rojo);
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.regla{
+    margin-bottom:18px;
+    background:#191919;
+    padding:15px;
+    border-left:4px solid var(--rojo);
+    border-radius:8px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.box{
+    background:var(--panel);
+    padding:25px;
+    border-radius:15px;
+    border:1px solid #2c2c2c;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
+    border-color:var(--rojo);
+}
+
+.box h3{
+    color:var(--rojo);
+    margin-bottom:15px;
+}
+
+.box ul{
+    padding-left:20px;
+}
+
+.box li{
+    margin-bottom:10px;
+}
+
+details{
+    background:#171717;
+    border-radius:10px;
+    margin-bottom:15px;
+    overflow:hidden;
+}
+
+summary{
+    padding:18px;
+    cursor:pointer;
+    font-weight:600;
+    background:#202020;
+}
+
+.ticket{
+    padding:20px;
+    line-height:1.8;
+    white-space:pre-wrap;
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    border-top:2px solid var(--rojo);
+    margin-top:30px;
+    color:#999;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main{
+    margin-left:0;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+}
+.procedimientos{
+    background:linear-gradient(145deg,#161616,#0d0d0d);
+}
+
+.proc-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:12px;
+    padding:15px;
+    border-left:4px solid #ff1a1a;
+    background:#1a1a1a;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.proc-item:hover{
+    background:#222;
+    transform:translateX(8px);
+}
+
+.proc-icon{
+    font-size:28px;
+    width:45px;
+    text-align:center;
+}
+
+.proc-item strong{
+    display:block;
+    color:#fff;
+    font-size:16px;
+}
+
+.proc-item small{
+    color:#b0b0b0;
+}
+
+.falta{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#1b1b1b;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+.falta span{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#ff1a1a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.falta strong{
+    display:block;
+    color:white;
+}
+
+.falta p{
+    color:#bdbdbd;
+    font-size:14px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h1>SDRP</h1>
+        <p>Santo Domingo Roleplay</p>
+    </div>
+
+    <ul class="menu">
+        <li><a href="#reglamento">Reglamento</a></li>
+        <li><a href="#disciplinario">Sistema Disciplinario</a></li>
+    </ul>
+
+</div>
+
+<div class="main">
+
+    <section class="hero">
+        <h1>Santo Domingo <span>Roleplay</span></h1>
+        <p>Nueva Modalidad de Trabajo del Staff y Soporte</p>
+    </section>
+
+    <section class="section" id="reglamento">
+
+        <div class="card">
+
+            <h2>📜 Reglamento Staff y Soporte</h2>
+
+            <!-- COPIA AQUÍ TODAS LAS REGLAS -->
+
+            <div class="regla"><strong>1.</strong> Todo reporte deberá ser registrado en el canal correspondiente. Al iniciar un soporte deberán registrar su entrada y, al finalizarlo, deberán registrar su salida. Todo staff que entre a soporte y no inicie o finalice su registro será sancionado.</div>
+
+<div class="regla"><strong>2.</strong> Los baneos estarán autorizados únicamente para Administradores en adelante.</div>
+
+<div class="regla"><strong>3.</strong> Cada soporte deberá resolver los casos por cuenta propia. Solo se solicitará ayuda a un superior cuando sea estrictamente necesario.</div>
+
+<div class="regla"><strong>4.</strong> Toda sanción aplicada a un usuario deberá ser enviada al canal correspondiente según el caso. No se aceptará ningún procedimiento sin haber sido enviado previamente y confirmado por un Encargado de Staff o un rango superior.</div>
+
+<div class="regla"><strong>5.</strong> Las amistades, preferencias personales y el relajo quedan fuera del área de soporte. Todos los casos deberán ser tratados de forma profesional e imparcial.</div>
+
+<div class="regla"><strong>6.</strong> Las sanciones para miembros del staff serán comunitarias y se aplicarán mediante el sistema disciplinario establecido.</div>
+
+<div class="regla"><strong>7.</strong> Más adelante se dividirán las responsabilidades del staff por áreas específicas como 911, Facciones Legales y otras áreas administrativas.</div>
+
+<div class="regla"><strong>8.</strong> Queda prohibido el uso de chalecos de staff mientras estén roleando o fuera de servicio, excepto cuando sea necesario para realizar trabajo administrativo.</div>
+
+<div class="regla"><strong>9.</strong> Todo reporte recibido deberá ser enviado a un canal específico con todos los detalles del caso.</div>
+
+<div class="regla"><strong>10.</strong> Ningún ticket podrá ser cerrado sin explicar claramente al usuario el motivo del cierre.</div>
+
+<div class="regla"><strong>11.</strong> Ningún miembro del staff podrá atender casos donde estén involucrados amigos cercanos, parejas, miembros de su organización o personas con las que tenga conflictos personales.</div>
+
+<div class="regla"><strong>12.</strong> Toda información manejada dentro de soportes y tickets es confidencial.</div>
+
+<div class="regla"><strong>13.</strong> El respeto es obligatorio durante cualquier procedimiento administrativo.</div>
+
+<div class="regla"><strong>14.</strong> Queda totalmente prohibido el abuso de comandos administrativos.</div>
+
+<div class="regla"><strong>15.</strong> Todo procedimiento administrativo importante deberá contar con evidencia.</div>
+
+<div class="regla"><strong>16.</strong> Se exige actividad constante por parte del staff.</div>
+
+<div class="regla"><strong>17.</strong> Todo staff disponible deberá colaborar con los reportes pendientes.</div>
+
+<div class="regla"><strong>18.</strong> Las decisiones tomadas por un Encargado de Staff o un rango superior tendrán prioridad.</div>
+
+<div class="regla"><strong>19.</strong> Queda prohibido discutir sanciones, decisiones administrativas o conflictos internos en canales públicos.</div>
+
+<div class="regla"><strong>20.</strong> Se aplicará tolerancia cero ante favoritismos.</div>
+
+<div class="regla"><strong>21.</strong> Queda prohibido utilizar el modo espectador (Spectate) por curiosidad o beneficio propio.</div>
+
+<div class="regla"><strong>22.</strong> Toda información obtenida mediante herramientas administrativas queda fuera del rol.</div>
+
+<div class="regla"><strong>23.</strong> Ningún reporte podrá ser ignorado.</div>
+
+<div class="regla"><strong>24.</strong> Todas las sanciones deberán quedar registradas con su respectiva evidencia y justificación.</div>
+
+<div class="regla"><strong>25.</strong> Queda prohibido discutir o entrar en conflictos con usuarios durante un soporte.</div>
+
+<div class="regla"><strong>26.</strong> Ningún miembro del staff podrá utilizar su rango o permisos para obtener beneficios personales.</div>
+
+<div class="regla"><strong>27.</strong> Los ascensos dentro del staff serán otorgados únicamente por desempeño, actividad, responsabilidad y compromiso.</div>
+
+<div class="regla"><strong>28.</strong> Los procedimientos graves como CK, PKT, wipes, eliminaciones de propiedades o sanciones mayores deberán contar con autorización administrativa.</div>
+
+<div class="regla"><strong>29.</strong> Queda prohibido ocultar errores administrativos.</div>
+
+<div class="regla"><strong>30.</strong> Cualquier caso de corrupción administrativa, abuso de poder, manipulación de evidencias o favoritismo comprobado resultará en expulsión inmediata.</div>
+
+<div class="regla"><strong>31.</strong> Queda prohibido solicitar ascensos.</div>
+
+<div class="regla"><strong>32.</strong> Los reportes o denuncias entre miembros del staff serán tratados con prioridad y total confidencialidad.</div>
+
+<div class="regla"><strong>33.</strong> Queda estrictamente prohibido filtrar información interna del staff.</div>
+
+<div class="regla"><strong>34.</strong> Está prohibido abandonar un procedimiento administrativo sin dejar constancia o informar previamente.</div>
+
+<div class="regla"><strong>35.</strong> Todos los miembros del staff deberán revisar constantemente los canales administrativos para mantenerse informados sobre cambios y actualizaciones.</div>
+
+        </div>
+
+    </section>
+
+    <section class="section" id="disciplinario">
+
+        <div class="grid">
+
+            <div class="box">
+                <h3>⚖ Sistema Disciplinario Para Staff</h3>
+
+                <ul>
+                    <li>Primera Falta → 500 comunitarias</li>
+                    <li>Segunda Falta → 800 comunitarias</li>
+                    <li>Tercera Falta → 1000 comunitarias</li>
+                    <li>Expulsión del Staff</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <div class="box procedimientos">
+
+    <h3>🛡 Procedimientos Importantes</h3>
+
+    <div class="proc-item">
+        <span class="proc-icon">⚔️</span>
+        <div>
+            <strong>CK (Character Kill)</strong>
+            <small>Requiere autorización administrativa.</small>
+        </div>
+    </div>
+
+    <div class="proc-item">
+        <span class="proc-icon">☠️</span>
+        <div>
+            <strong>PKT (Player Kill Total)</strong>
+            <small>Debe ser aprobado y documentado.</small>
+        </div>
+    </div>
+
+    <div class="proc-item">
+        <span class="proc-icon">🧹</span>
+        <div>
+            <strong>Wipes</strong>
+            <small>Procedimiento irreversible.</small>
+        </div>
+    </div>
+
+    <div class="proc-item">
+        <span class="proc-icon">🔨</span>
+        <div>
+            <strong>Sanciones Mayores</strong>
+            <small>Necesitan revisión administrativa.</small>
+        </div>
+    </div>
+
+</div>
+        </div>
+    </div>
+
+</div>
